@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dragon IT School</title>
+        <link rel="stylesheet" href="./styles/page-courses.css" />
+        <link rel="icon" href="/favicon.ico" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Inter:200,300,400,500,700"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,700"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+        />
+    </head>
+    <body>
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div id="navbar__logo">
+                    <a href="../Home/page-home.html">
+                        <img
+                            src="../../Assets/school_logo.png"
+                            alt="ITDragon"
+                        />
+                    </a>
+                </div>
+
+                <div class="burger_menu">
+                    <div class="navbar__toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="#anchor_about" class="navbar__links"
+                            >Про курс</a
+                        >
+                        <div class="navbar_line"></div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#anchor_programm" class="navbar__links"
+                            >Програма курсу</a
+                        >
+                        <div class="navbar_line"></div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#anchor_application" class="navbar__links"
+                            >Залишити заявку</a
+                        >
+                        <div class="navbar_line"></div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#anchor_questions" class="navbar__links"
+                            >Запитання</a
+                        >
+                        <div class="navbar_line"></div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="grey_line_separator"></div>
+
+        <!-- Page Head -->
+        <div class="try_lesson">
+            <div class="try_left">
+                <div class="try_lesson_text">
+                    <p class="try_lesson_header">Основи Веб-розробки</p>
+                    <p class="try_lesson_age">Для дітей 11-15 років</p>
+                </div>
+                <div class="try_arrow_section">
+                    <p>Записатись на пробне заняття:</p>
+                    <img
+                        class="arrow_big_screen"
+                        src="../../Assets/arrow_try.png"
+                        alt=""
+                    />
+                    <img
+                        class="arrow_small_screen"
+                        src="../../Assets/arrow_small_screen.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+            <div class="try_right">
+                <div class="application_form">
+                    <form action="" class="try_form">
+                        <p>Ім'я:</p>
+                        <input
+                            placeholder="Ім'я"
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                        />
+                        <p>Телефон:</p>
+                        <input
+                            type="tel"
+                            placeholder="+380123456789"
+                            id="phone"
+                            name="phone"
+                            required
+                        />
+                        <p>E-mail:</p>
+                        <input
+                            type="email"
+                            placeholder="maria.shevchnko@gmail.com"
+                            id="email"
+                            name="email"
+                        />
+                        <p>Вік дитини</p>
+                        <input
+                            type="number"
+                            placeholder="8"
+                            id="age"
+                            name="age"
+                            required
+                        />
+                        <button class="consultation_button" type="submit">
+                            Відправити
+                        </button>
+                    </form>
+                    <div class="try_politics">
+                        <p>
+                            Натискаючи, Ви погоджуєтесь з
+                            <strong>політикою конфіденційності.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="anchor_about" class="grey_line_separator"></div>
+
+        <!-- Description Section -->
+        <div class="description_section">
+            <p>
+                Якщо ваша сила полягає у творчому підході до розв'язання завдань
+                та ви відчуваєте потяг до створення вражаючих інтерактивних
+                інтерфейсів, то фронтенд - це те що вам потрібно.
+            </p>
+            <p>
+                Фронтенд розробка – це затребувана професія, що дає гнучкість та
+                можливість працювати над особистими проектами або в команді. Це
+                динамічна сфера, де ви ніколи не будете нудно, адже вона
+                постійно розвивається.
+            </p>
+            <img src="../../Assets/front_end_background.png" alt="" />
+        </div>
+
+        <div class="grey_line_separator"></div>
+
+        <!-- Study List Section -->
+        <div class="study_list_section">
+            <p class="study_list_header">На курсі студенти вивчають як:</p>
+            <div class="study_list">
+                <div class="study_list_item">
+                    <img
+                        class="cross_img"
+                        src="../../Assets/cross.png"
+                        alt=""
+                    />
+                    <div class="study_list_item_body">
+                        <p>Використовувати мови розмітки НТML і CSS</p>
+                        <div class="study_list_item_img_container">
+                            <img src="../../Assets/html_icon.png" alt="" />
+                            <img src="../../Assets/css_icon.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="study_list_item">
+                    <img
+                        class="cross_img"
+                        src="../../Assets/cross.png"
+                        alt=""
+                    />
+                    <div class="study_list_item_body">
+                        <p>Писати JavaScript-код</p>
+                        <div class="study_list_item_img_container">
+                            <img src="../../Assets/js_icon.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="study_list_item">
+                    <img
+                        class="cross_img"
+                        src="../../Assets/cross.png"
+                        alt=""
+                    />
+                    <div class="study_list_item_body">
+                        <p>Дизайнити свій сайт та виконувати верстку</p>
+                        <div class="study_list_item_img_container">
+                            <img src="../../Assets/dev_icon.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="study_list_item">
+                    <img
+                        class="cross_img"
+                        src="../../Assets/cross.png"
+                        alt=""
+                    />
+                    <div class="study_list_item_body">
+                        <p>Працювати з інструментами Git та Github</p>
+                        <div class="study_list_item_img_container">
+                            <img src="../../Assets/git_icon.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="study_list_item">
+                    <img
+                        class="cross_img"
+                        src="../../Assets/cross.png"
+                        alt=""
+                    />
+                    <div class="study_list_item_body">
+                        <p>Запустити свій сайт та підтримувати його</p>
+                        <div class="study_list_item_img_container">
+                            <img src="../../Assets/start_icon.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grey_line_separator"></div>
+
+        <!-- Lessons Sections -->
+        <div class="lessons_section">
+            <p class="lessons_section_header">Як проходять заняття</p>
+            <div class="lessons_block">
+                <p class="lessons_block_header">Як проходять уроки</p>
+                <p class="lessons_block_text">
+                    Кожного заняття студенти вивчають нові аспекти фронтенд
+                    розробки і використовують їх для реалізації практичних
+                    завдань. Студенти працюють індивідуально і в команді.
+                </p>
+                <div class="arrow_side">
+                    <img src="../../Assets/side_arrow.png" alt="" />
+                </div>
+            </div>
+            <div class="lessons_block">
+                <p class="lessons_block_header">Інтерактивна методика</p>
+                <p class="lessons_block_text">
+                    Викладачі завжди відкриті до кумунікації, тому якщо у
+                    студентів виникають питання стосовно матеріалу курсу, наші
+                    вчителі завжди допоможуть.
+                </p>
+                <div class="arrow_side">
+                    <img src="../../Assets/side_arrow.png" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div id="anchor_programm" class="grey_line_separator"></div>
+
+        <!-- Course Programm Section -->
+        <div class="course_programm_section">
+            <p class="course_programm_header">Програма курсу</p>
+            <div class="course_programm_container">
+                <div class="course_programm_item">
+                    <p><strong>Модуль 1. </strong>Основи HTML</p>
+                    <img
+                        class="colapsible_button"
+                        src="../../Assets/collapsible_button.png"
+                        alt=""
+                    />
+                </div>
+                <div class="expandable_list">
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Структура базового HTML-документу</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Текстові елементи</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Візуальні елементи</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Таблиці та форми</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course_programm_container">
+                <div class="course_programm_item">
+                    <p><strong>Модуль 2. </strong>Основи CSS</p>
+                    <img
+                        class="colapsible_button"
+                        src="../../Assets/collapsible_button.png"
+                        alt=""
+                    />
+                </div>
+                <div class="expandable_list">
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Вступ до CSS та його роль у веб-дизайні</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Селектори та властивості:</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Позиціонування елементів:</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Флексбокс та гріди</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course_programm_container">
+                <div class="course_programm_item">
+                    <p><strong>Модуль 3. </strong>Figma та дизайн сату</p>
+                    <img
+                        class="colapsible_button"
+                        src="../../Assets/collapsible_button.png"
+                        alt=""
+                    />
+                </div>
+                <div class="expandable_list">
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Ознайомлення з Figma</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Робота з інструментами та панелями</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Створення макетів та прототипів веб-сторінок</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>
+                            Використання кольорів, шрифтів та елементів дизайну.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="course_programm_container">
+                <div class="course_programm_item">
+                    <p>
+                        <strong>Модуль 4. </strong>JavaScript та бібліотека
+                        jQuery
+                    </p>
+                    <img
+                        class="colapsible_button"
+                        src="../../Assets/collapsible_button.png"
+                        alt=""
+                    />
+                </div>
+                <div class="expandable_list">
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Основи синтаксису JavaScript</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Змінні, типи даних та операції</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Робота з DOM</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Введення в jQuery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="course_programm_container">
+                <div class="course_programm_item">
+                    <p><strong>Модуль 5. </strong>Власний проєкт</p>
+                    <img
+                        class="colapsible_button"
+                        src="../../Assets/collapsible_button.png"
+                        alt=""
+                    />
+                </div>
+                <div class="expandable_list">
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Розробка дизайну сайту</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Верстка сайту</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Додавання інтерактивних елементів</p>
+                    </div>
+                    <div class="expandable_element">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Деплой проєкту</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="anchor_application" class="grey_line_separator"></div>
+
+        <!-- Application Section -->
+        <div class="application_section">
+            <div class="left_side">
+                <p class="application_section_header">
+                    Залиште заявку <br /><span class="green_text"
+                        >на навчання</span
+                    >
+                </p>
+                <div class="application_features">
+                    <div class="application_features_item">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Група до 7 осіб</p>
+                    </div>
+                    <div class="application_features_item">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Чотири місяці</p>
+                    </div>
+                    <div class="application_features_item">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>Два рази в тиждень</p>
+                    </div>
+                    <div class="application_features_item">
+                        <img src="../../Assets/cross.png" alt="" />
+                        <p>1 заняття — година (60хв)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="application_form">
+                <form action="" class="try_form">
+                    <p>Ім'я:</p>
+                    <input
+                        placeholder="Ім'я"
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                    />
+                    <p>Телефон:</p>
+                    <input
+                        type="tel"
+                        placeholder="+380123456789"
+                        id="phone"
+                        name="phone"
+                        required
+                    />
+                    <p>E-mail:</p>
+                    <input
+                        type="email"
+                        placeholder="maria.shevchnko@gmail.com"
+                        id="email"
+                        name="email"
+                    />
+                    <p>Вік дитини</p>
+                    <input
+                        type="number"
+                        placeholder="8"
+                        id="age"
+                        name="age"
+                        required
+                    />
+                    <button class="consultation_button" type="submit">
+                        Відправити
+                    </button>
+                    <div class="try_politics">
+                        <p>
+                            Натискаючи, Ви погоджуєтесь з
+                            <strong>політикою конфіденційності.</strong>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="anchor_questions" class="grey_line_separator"></div>
+
+        <!-- Questions Section -->
+        <div class="questions_section">
+            <p class="questions_section_header">Поширені питання</p>
+            <div class="questions_container">
+                <div class="question">
+                    <div class="question_main">
+                        <p>Як дізнатись ціну</p>
+                        <img src="../../Assets/collapsible_button.png" alt="" />
+                    </div>
+                    <p class="expandable_question">
+                        Залиште заявку на навчання, і найближчим часом з вами
+                        зв'яжеться наш менеджер-консультант, щоб розрахувати для
+                        вас фінальну вартість курсу. Вона залежить від того,
+                        який формат (онлайн або офлайн) і пакет (від 4 до 36
+                        занять) ви оберете, а також від міста, можливих пільг і
+                        поточних знижок.
+                    </p>
+                    <div class="grey_line"></div>
+                </div>
+                <div class="question">
+                    <div class="question_main">
+                        <p>Чи потрібно мати ноутбук для занять?</p>
+                        <img src="../../Assets/collapsible_button.png" alt="" />
+                    </div>
+                    <p class="expandable_question">
+                        Ноутбук(ПК) необхідний для відвідування лекцій та
+                        виконання домашніх завдань. Комп'ютер не повинен бути
+                        занадто потужний, студенту повністю вистачить середнього
+                        комп'ютера
+                    </p>
+                    <div class="grey_line"></div>
+                </div>
+                <div class="question">
+                    <div class="question_main">
+                        <p>Який розклад занять?</p>
+                        <img src="../../Assets/collapsible_button.png" alt="" />
+                    </div>
+                    <p class="expandable_question">
+                        Заняття проходять два рази в тиждень, одне заняття на
+                        вихідних, інше серед тижня. Точний час різниться в
+                        залежності від групи.
+                    </p>
+                    <div class="grey_line"></div>
+                </div>
+                <div class="question">
+                    <div class="question_main">
+                        <p>Хто викладає курси?</p>
+                        <img src="../../Assets/collapsible_button.png" alt="" />
+                    </div>
+                    <p class="expandable_question">
+                        Курси викладають кваліфіковані спеціалісти, які чудово
+                        розбираються в свої сфері, а також вміють знайти
+                        найкращий підхід до окремого студента
+                    </p>
+                    <div class="grey_line"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div id="anchor_contacts" class="footer">
+                <div class="footer_container">
+                    <div class="footer_main">
+                        <div class="logo_img">
+                            <img src="../../Assets/school_logo.png" alt="" />
+                        </div>
+                        <div class="credentials">
+                            <div class="contacts">
+                                <p class="contacts_header">Контакти:</p>
+                                <p class="phone_1">+380 (068) 288 2729</p>
+                                <p class="phone_2">+380 (050) 527 3827</p>
+                            </div>
+                            <div class="social">
+                                <p class="social_header">Підписуйтесь:</p>
+                                <div class="social_icons">
+                                    <a href="#">
+                                        <img
+                                            src="../../Assets/facebook_image.png"
+                                            alt=""
+                                        />
+                                    </a>
+                                    <a href="#">
+                                        <img
+                                            src="../../Assets/instagram_image.png"
+                                            alt=""
+                                        />
+                                    </a>
+                                    <a href="#">
+                                        <img
+                                            src="../../Assets/telegram_image.png"
+                                            alt=""
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line_footer"></div>
+                    <p class="footer_rules">© ITDragon. Всі права захищені</p>
+                </div>
+            </div>
+        </footer>
+        <script src="./scripts/navbar.js"></script>
+        <script src="./scripts/app.js"></script>
+        <script src="./scripts/collabsible.js"></script>
+    </body>
+</html>
