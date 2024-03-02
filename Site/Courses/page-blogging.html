@@ -18,6 +18,11 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.3/build/css/intlTelInput.css"
+        />
+        <link rel="icon" href="../../Assets/favicon.ico" />
     </head>
     <body>
         <!-- Navbar Section -->
@@ -98,34 +103,41 @@
                         <input
                             placeholder="Ім'я"
                             type="text"
-                            id="name"
+                            id="name_consultation_first"
                             name="name"
                             required
                         />
+                        <div class="error_first"></div>
                         <p>Телефон:</p>
                         <input
                             type="tel"
-                            placeholder="+380123456789"
-                            id="phone"
+                            id="phone_consultation_first"
                             name="phone"
                             required
                         />
+                        <div class="error_first"></div>
                         <p>E-mail:</p>
                         <input
                             type="email"
                             placeholder="maria.shevchnko@gmail.com"
-                            id="email"
+                            id="email_consultation_first"
                             name="email"
                         />
+                        <div class="error_first"></div>
                         <p>Вік дитини</p>
                         <input
                             type="number"
                             placeholder="8"
-                            id="age"
+                            id="age_consultation_first"
                             name="age"
                             required
                         />
-                        <button class="consultation_button" type="submit">
+                        <div class="error_first"></div>
+                        <button
+                            class="consultation_button"
+                            type="submit"
+                            id="submit_first"
+                        >
                             Відправити
                         </button>
                     </form>
@@ -417,34 +429,41 @@
                     <input
                         placeholder="Ім'я"
                         type="text"
-                        id="name"
+                        id="name_consultation_second"
                         name="name"
                         required
                     />
+                    <div class="error_second"></div>
                     <p>Телефон:</p>
                     <input
                         type="tel"
-                        placeholder="+380123456789"
-                        id="phone"
+                        id="phone_consultation_second"
                         name="phone"
                         required
                     />
+                    <div class="error_second"></div>
                     <p>E-mail:</p>
                     <input
                         type="email"
                         placeholder="maria.shevchnko@gmail.com"
-                        id="email"
+                        id="email_consultation_second"
                         name="email"
                     />
+                    <div class="error_second"></div>
                     <p>Вік дитини</p>
                     <input
                         type="number"
                         placeholder="8"
-                        id="age"
+                        id="age_consultation_second"
                         name="age"
                         required
                     />
-                    <button class="consultation_button" type="submit">
+                    <div class="error_second"></div>
+                    <button
+                        class="consultation_button"
+                        type="submit"
+                        id="submit_second"
+                    >
                         Відправити
                     </button>
                     <div class="try_politics">
@@ -562,8 +581,284 @@
             </div>
         </footer>
 
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.3/build/js/intlTelInput.min.js"></script>
+        <script>
+            const input_one = document.querySelector(
+                "#phone_consultation_first"
+            );
+            const input_two = document.querySelector(
+                "#phone_consultation_second"
+            );
+            window.intlTelInput(input_one, {
+                useFullscreenPopup: false,
+                countrySearch: false,
+                initialCountry: "UA",
+                utilsScript:
+                    "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.3/build/js/utils.js",
+            });
+
+            window.intlTelInput(input_two, {
+                useFullscreenPopup: false,
+                countrySearch: false,
+                initialCountry: "UA",
+                utilsScript:
+                    "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.3/build/js/utils.js",
+            });
+        </script>
         <script src="./scripts/navbar.js"></script>
         <script src="./scripts/app.js"></script>
         <script src="./scripts/collabsible.js"></script>
+        <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+            import {
+                getDatabase,
+                ref,
+                set,
+                get,
+                child,
+            } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyB7TVsYHt0xsOgWQYfjwL53uAcKqqTjk_0",
+                authDomain: "it-dragon-website.firebaseapp.com",
+                databaseURL:
+                    "https://it-dragon-website-default-rtdb.europe-west1.firebasedatabase.app",
+                projectId: "it-dragon-website",
+                storageBucket: "it-dragon-website.appspot.com",
+                messagingSenderId: "568114275893",
+                appId: "1:568114275893:web:cf48613e270ef52999337c",
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+            // get ref to database services
+            const db = getDatabase(app);
+
+            function validateForm(
+                name_id,
+                phone_id,
+                email_id,
+                age_id,
+                error_class
+            ) {
+                event.preventDefault();
+                const name = document.getElementById(name_id).value;
+                var phone = document.getElementById(phone_id).value;
+                phone = phone.replace(/\s/g, "");
+                const email = document.getElementById(email_id).value;
+                var age = document.getElementById(age_id).value;
+
+                const errors = document.querySelectorAll(error_class);
+
+                // Regular expression for validating email
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                var hasErrors = false;
+
+                if (name.trim() === "") {
+                    setErrorMessage(errors[0], "Введіть коректне ім'я");
+                    hasErrors = true;
+                } else {
+                    clearErrorMessage(errors[0]);
+                }
+
+                if (!/^\d+$/.test(phone)) {
+                    setErrorMessage(
+                        errors[1],
+                        "Введіть коректний номер телефону"
+                    );
+                    hasErrors = true;
+                } else {
+                    clearErrorMessage(errors[1]);
+                }
+
+                if (!emailPattern.test(email)) {
+                    setErrorMessage(errors[2], "Введіть коректний емеіл");
+                    hasErrors = true;
+                } else {
+                    clearErrorMessage(errors[2]);
+                }
+
+                if (age < 7 || age > 17) {
+                    setErrorMessage(
+                        errors[3],
+                        "Вік має бути в проміжку 7 і 17 років"
+                    );
+                    hasErrors = true;
+                } else {
+                    clearErrorMessage(errors[3]);
+                }
+
+                return !hasErrors;
+            }
+
+            function setErrorMessage(errorDiv, message) {
+                var paragraph = errorDiv.querySelector("h6");
+                if (paragraph) {
+                    paragraph.textContent = message;
+                } else {
+                    paragraph = document.createElement("h6");
+                    paragraph.textContent = message;
+                    errorDiv.appendChild(paragraph);
+                }
+            }
+
+            function clearErrorMessage(errorDiv) {
+                var paragraph = errorDiv.querySelector("h6");
+                if (paragraph) {
+                    errorDiv.removeChild(paragraph);
+                }
+            }
+
+            // function submitButton(
+            //     name_id,
+            //     phone_id,
+            //     email_id,
+            //     age_id,
+            //     error_id,
+            //     submit_id,
+            //     form_number
+            // ) {
+            //     document
+            //         .getElementById(submit_id)
+            //         .addEventListener("click", function (e) {
+            //             if (
+            //                 validateForm(
+            //                     name_id,
+            //                     phone_id,
+            //                     email_id,
+            //                     age_id,
+            //                     error_id
+            //                 )
+            //             ) {
+            //                 e.preventDefault();
+            //                 set(
+            //                     ref(
+            //                         db,
+            //                         "user/" +
+            //                             document.getElementById(name_id).value
+            //                     ),
+            //                     {
+            //                         username:
+            //                             document.getElementById(name_id).value,
+            //                         email: document.getElementById(email_id)
+            //                             .value,
+            //                         phone: document.getElementById(phone_id)
+            //                             .value,
+            //                         child_age:
+            //                             document.getElementById(age_id).value,
+            //                     }
+            //                 );
+            //                 Swal.fire({
+            //                     icon: "success",
+            //                     title: "Дані збережено",
+            //                     showConfirmButton: true,
+            //                     confirmButtonColor: "#9dbf84",
+            //                 });
+            //                 document
+            //                     .querySelectorAll("#application_form")
+            //                     [form_number].reset();
+            //             }
+            //         });
+            // }
+
+            // console.log(getElementById("submit_second"));
+
+            document
+                .getElementById("submit_second")
+                .addEventListener("click", function (e) {
+                    if (
+                        validateForm(
+                            "name_consultation_second",
+                            "phone_consultation_second",
+                            "email_consultation_second",
+                            "age_consultation_second",
+                            ".error_second"
+                        )
+                    ) {
+                        e.preventDefault();
+                        set(
+                            ref(
+                                db,
+                                "aplication/" +
+                                    document.getElementById(
+                                        "name_consultation_second"
+                                    ).value
+                            ),
+                            {
+                                username: document.getElementById(
+                                    "name_consultation_second"
+                                ).value,
+                                email: document.getElementById(
+                                    "email_consultation_second"
+                                ).value,
+                                phone: document.getElementById(
+                                    "phone_consultation_second"
+                                ).value,
+                                child_age: document.getElementById(
+                                    "age_consultation_second"
+                                ).value,
+                                course: "Blogging",
+                            }
+                        );
+                        Swal.fire({
+                            icon: "success",
+                            title: "Дані збережено",
+                            showConfirmButton: true,
+                            confirmButtonColor: "#9dbf84",
+                        });
+                        document.querySelectorAll(".try_form")[1].reset();
+                    }
+                });
+
+            document
+                .getElementById("submit_first")
+                .addEventListener("click", function (e) {
+                    if (
+                        validateForm(
+                            "name_consultation_first",
+                            "phone_consultation_first",
+                            "email_consultation_first",
+                            "age_consultation_first",
+                            ".error_first"
+                        )
+                    ) {
+                        e.preventDefault();
+                        set(
+                            ref(
+                                db,
+                                "free_lesson/" +
+                                    document.getElementById(
+                                        "name_consultation_first"
+                                    ).value
+                            ),
+                            {
+                                username: document.getElementById(
+                                    "name_consultation_first"
+                                ).value,
+                                email: document.getElementById(
+                                    "email_consultation_first"
+                                ).value,
+                                phone: document.getElementById(
+                                    "phone_consultation_first"
+                                ).value,
+                                child_age: document.getElementById(
+                                    "age_consultation_first"
+                                ).value,
+                                course: "Blogging",
+                            }
+                        );
+                        Swal.fire({
+                            icon: "success",
+                            title: "Дані збережено",
+                            showConfirmButton: true,
+                            confirmButtonColor: "#9dbf84",
+                        });
+                        document.querySelectorAll(".try_form")[0].reset();
+                    }
+                });
+        </script>
     </body>
 </html>

@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Dragon IT School</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="./Assets/favicon.ico" />
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Inter:200,300,400,500,700"
@@ -16,6 +16,10 @@
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.3/build/css/intlTelInput.css"
         />
         <link rel="stylesheet" href="Site/Home/styles/page-home.css" />
     </head>
@@ -137,7 +141,7 @@
                                     src="./Assets/processor_image.png"
                                     alt=""
                                 />
-                                <p>Іноваційність</p>
+                                <p>Інноваційність</p>
                             </div>
                             <p>
                                 У школі ми завжди стимулюємо інноваційний підхід
@@ -145,20 +149,20 @@
                                 досліджує нові методики та технології, щоб
                                 забезпечити найефективніше та найцікавіше
                                 оточення для кожного учня. Відкритість до
-                                новаторства є ключовим принципом нашої школи
+                                новаторства є ключовим принципом нашої школи.
                             </p>
                         </div>
                         <div class="feature_card">
                             <div class="name_row">
                                 <img src="./Assets/lamp_image.png" alt="" />
-                                <p>Креатисність</p>
+                                <p>Креативність</p>
                             </div>
                             <p>
                                 Викладачі стимулюють учнів до пошуку незвичайних
                                 рішень, перетворюючи кожне завдання на захопливу
                                 подорож, де кожен крок - це нове відкриття. Ми
                                 допомагаємо розвивати творче мислення та
-                                унікальність кожної дитини
+                                унікальність кожної дитини.
                             </p>
                         </div>
                         <div class="feature_card">
@@ -170,18 +174,18 @@
                                 Ми надаємо увагу вирішенню реальних проблем
                                 через практичні завдання. Наші учні не лише
                                 отримують необхідні теоретичні знання, але й
-                                застосовують їх у практичних сценаріях..
+                                застосовують їх у практичних сценаріях.
                             </p>
                         </div>
                         <div class="feature_card">
                             <div class="name_row">
                                 <img src="./Assets/workcase_image.png" alt="" />
-                                <p>Іноваційність</p>
+                                <p>Профорієнтація</p>
                             </div>
                             <p>
                                 Ми віримо в поглиблене вивчення професій.
                                 Впевнені, що навіть один практичний курс
-                                забезпечить більше користі та розуміння
+                                забезпечить достатньо користі та розуміння
                                 професії. Щоб допомогти дітям остаточно
                                 визначитись, ми пропонуємо безкоштовні уроки для
                                 кожного напрямку.
@@ -208,7 +212,7 @@
                                         Курс навчає основних навичок, які має
                                         мати веб розробник. Після закінчення
                                         курсу студент зможе впевнено робити
-                                        односторінкові лендингові сайти
+                                        односторінкові лендингові сайти.
                                     </p>
                                 </div>
                                 <a href="./Site/Courses/page-frontend.html">
@@ -327,7 +331,10 @@
                     </div>
                     <div class="consultation_form_list">
                         <div class="consultation_form_group">
-                            <form>
+                            <form
+                                id="contact_form"
+                                action="https://script.google.com/macros/s/AKfycbwv3ELUUKLezFX3JcmmWPsKI38Ad6vlP1KVmhGvgoCrvpgrfdbe-mxDuVrPA7ggEe0a5Q/exec"
+                            >
                                 <div class="input-group name_input">
                                     <div class="image_container">
                                         <img
@@ -338,29 +345,24 @@
                                     <input
                                         placeholder="Ім'я"
                                         type="text"
-                                        id="name"
+                                        id="name_consultation"
                                         name="name"
                                         required
                                     />
                                 </div>
-                                <div class="line"></div>
+                                <div class="line_form"></div>
+                                <div class="error"></div>
                                 <div class="input-group telephone_input">
-                                    <div class="image_container">
-                                        <img
-                                            src="./Assets/flag_image.png"
-                                            alt=""
-                                        />
-                                    </div>
-
                                     <input
-                                        placeholder="Телефон"
                                         type="tel"
-                                        id="phone"
+                                        id="phone_consultation"
                                         name="phone"
+                                        inputmode="numeric"
                                         required
                                     />
                                 </div>
-                                <div class="line"></div>
+                                <div class="line_form"></div>
+                                <div class="error"></div>
                                 <div class="input-group email_input">
                                     <div class="image_container">
                                         <img
@@ -371,15 +373,17 @@
                                     <input
                                         placeholder="Email"
                                         type="email"
-                                        id="email"
+                                        id="email_consultation"
                                         name="email"
                                         required
                                     />
                                 </div>
-                                <div class="line"></div>
+                                <div class="line_form"></div>
+                                <div class="error"></div>
                                 <button
                                     class="consultation_button"
                                     type="submit"
+                                    id="submit"
                                 >
                                     Відправити
                                 </button>
@@ -553,8 +557,159 @@
             </div>
         </footer>
 
+        <style>
+            /* Custom styles for the confirmation button */
+            .swal2-confirm {
+                border: none; /* Change button border color */
+            }
+        </style>
+
         <script src="./Site/Home/scripts/navbar.js"></script>
+        <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+            import {
+                getDatabase,
+                ref,
+                set,
+                get,
+                child,
+            } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyB7TVsYHt0xsOgWQYfjwL53uAcKqqTjk_0",
+                authDomain: "it-dragon-website.firebaseapp.com",
+                databaseURL:
+                    "https://it-dragon-website-default-rtdb.europe-west1.firebasedatabase.app",
+                projectId: "it-dragon-website",
+                storageBucket: "it-dragon-website.appspot.com",
+                messagingSenderId: "568114275893",
+                appId: "1:568114275893:web:cf48613e270ef52999337c",
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+            // get ref to database services
+            const db = getDatabase(app);
+
+            const scriptURL =
+                "https://script.google.com/macros/s/AKfycbwv3ELUUKLezFX3JcmmWPsKI38Ad6vlP1KVmhGvgoCrvpgrfdbe-mxDuVrPA7ggEe0a5Q/exec";
+
+            function validateForm() {
+                event.preventDefault();
+                const name = document.getElementById("name_consultation").value;
+                var phone = document.getElementById("phone_consultation").value;
+                phone = phone.replace(/\s/g, "");
+                const email =
+                    document.getElementById("email_consultation").value;
+                const errors = document.querySelectorAll(".error");
+                const lines_form = document.querySelectorAll(".line_form");
+
+                // Regular expression for validating email
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                var hasErrors = false;
+
+                if (name.trim() === "") {
+                    setErrorMessage(errors[0], "Введіть коректне ім'я");
+                    hasErrors = true;
+                    lines_form[0].classList.toggle("red_error");
+                } else {
+                    clearErrorMessage(errors[0]);
+                    lines_form[0].classList.remove("red_error");
+                }
+
+                if (!/^\d+$/.test(phone)) {
+                    setErrorMessage(
+                        errors[1],
+                        "Введіть коректний номер телефону"
+                    );
+                    hasErrors = true;
+                    lines_form[1].classList.toggle("red_error");
+                } else {
+                    clearErrorMessage(errors[1]);
+                    lines_form[1].classList.remove("red_error");
+                }
+
+                if (!emailPattern.test(email)) {
+                    setErrorMessage(errors[2], "Введіть коректний емеіл");
+                    hasErrors = true;
+                    lines_form[2].classList.toggle("red_error");
+                } else {
+                    clearErrorMessage(errors[2]);
+                    lines_form[2].classList.remove("red_error");
+                }
+
+                return !hasErrors;
+            }
+
+            function setErrorMessage(errorDiv, message) {
+                var paragraph = errorDiv.querySelector("p");
+                if (paragraph) {
+                    paragraph.textContent = message;
+                } else {
+                    paragraph = document.createElement("p");
+                    paragraph.textContent = message;
+                    errorDiv.appendChild(paragraph);
+                }
+            }
+
+            function clearErrorMessage(errorDiv) {
+                var paragraph = errorDiv.querySelector("p");
+                if (paragraph) {
+                    errorDiv.removeChild(paragraph);
+                }
+            }
+
+            document
+                .getElementById("submit")
+                .addEventListener("click", function (e) {
+                    if (validateForm()) {
+                        e.preventDefault();
+                        set(
+                            ref(
+                                db,
+                                "consultation/" +
+                                    document.getElementById("name_consultation")
+                                        .value
+                            ),
+                            {
+                                username:
+                                    document.getElementById("name_consultation")
+                                        .value,
+                                email: document.getElementById(
+                                    "email_consultation"
+                                ).value,
+                                phone: document.getElementById(
+                                    "phone_consultation"
+                                ).value,
+                            }
+                        );
+
+                        Swal.fire({
+                            icon: "success",
+                            title: "Дані збережено",
+                            showConfirmButton: true,
+                            confirmButtonColor: "#9dbf84",
+                        });
+                        document.getElementById("contact_form").reset();
+                    }
+                });
+        </script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.3/build/js/intlTelInput.min.js"></script>
+        <script>
+            const input = document.querySelector("#phone_consultation");
+            window.intlTelInput(input, {
+                useFullscreenPopup: false,
+                countrySearch: false,
+                initialCountry: "UA",
+                utilsScript:
+                    "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.3/build/js/utils.js",
+            });
+        </script>
         <script src="./Site/Home/scripts/app.js"></script>
     </body>
 </html>

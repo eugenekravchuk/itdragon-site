@@ -8,6 +8,15 @@
     padding: 0;
     font-family: "Inter", sans-serif;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
 }
 
 html,
@@ -73,6 +82,7 @@ body {
     padding: 0 1rem;
     height: 100%;
     font-weight: 500;
+    font-size: 22px;
 }
 
 .navbar__btn {
@@ -240,6 +250,7 @@ body {
 
     .navbar__links {
         padding: 0;
+        font-size: 20px;
         /* border: 1px solid #484848; */
     }
 
@@ -262,7 +273,7 @@ body {
     }
 
     #navbar__logo img {
-        width: 100px;
+        width: 80px;
         object-fit: contain;
         /* padding-left: 25px; */
     }
@@ -334,6 +345,19 @@ body {
         height: 2px;
     }
 }
+@media screen and (max-width: 500px) {
+    #navbar__logo img {
+        width: 70px;
+    }
+
+    #mobile-menu {
+        margin-right: 10px;
+    }
+
+    .navbar__toggle .bar {
+        width: 35px;
+    }
+}
 
 /*  */
 /* Inition */
@@ -351,7 +375,7 @@ body {
     max-width: 1500px;
     height: 800px;
     margin: 0 auto;
-    margin-top: 3vh;
+    margin-top: 1vh;
     align-items: start;
     justify-content: center;
 }
@@ -409,8 +433,9 @@ body {
 
 @media screen and (max-width: 1540px) {
     .intro {
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-right: 50px;
+        margin-left: 50px;
+        border-radius: 60px;
     }
 
     .first_intro {
@@ -428,7 +453,7 @@ body {
 
 @media screen and (max-width: 1184px) {
     .free_dragon {
-        opacity: 0.3;
+        opacity: 0.1;
     }
 }
 
@@ -439,11 +464,14 @@ body {
     .free_dragon {
         width: 90%;
         opacity: 0.2;
-        /* bottom: -30%; */
+
+        bottom: -10%;
     }
 
     .intro {
         padding-left: 40px;
+        justify-content: start;
+        padding-top: 150px;
     }
 }
 
@@ -503,6 +531,10 @@ body {
     .free_dragon {
         bottom: -8vw;
     }
+
+    .intro {
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 563px) {
@@ -522,7 +554,6 @@ body {
         flex-direction: column;
         height: 550px;
         margin: 10px;
-        margin-top: 40px;
         padding-top: 40px;
         align-items: start;
         justify-content: start;
@@ -1080,6 +1111,7 @@ body {
     height: 662px;
     position: relative;
     margin-bottom: 20px;
+    overflow: visible;
 }
 
 .consultation_form_container {
@@ -1105,11 +1137,11 @@ input[type="text"],
 input[type="tel"],
 input[type="email"] {
     color: #fff;
-    background-color: transparent;
+    background: transparent;
     border: none;
     outline: none;
     border-radius: 3px;
-    font-size: 20px;
+    font-size: 18px;
     /* padding: 10px; */
     width: 100%;
     cursor: text;
@@ -1119,6 +1151,12 @@ input[type="email"] {
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus {
+    background-color: none;
+}
+
+input[type="text"]:active,
+input[type="tel"]:active,
+input[type="email"]:active {
     background-color: none;
 }
 
@@ -1167,7 +1205,7 @@ input[type="email"]::placeholder {
 .input-group {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     height: 50px;
 }
 
@@ -1194,15 +1232,43 @@ input[type="email"]::placeholder {
 .image_container {
     display: flex;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
+    margin-top: 7px;
 }
 
-.line {
+.line_form {
     width: 100%;
     background-color: #fff;
     height: 1px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+}
+
+/* Dropdown */
+.iti__selected-flag {
+    padding-left: 0;
+}
+
+.iti__dropdown-content {
+    color: #131313;
+}
+
+input[type="text"].iti__search-input {
+    color: #131313;
+}
+
+#phone_consultation {
+    padding-left: 45px;
+}
+
+/* Error message */
+.error {
+    color: rgb(209, 147, 147);
+    height: 30px;
+    padding-top: 5px;
+}
+.red_error {
+    background-color: rgb(209, 147, 147);
 }
 
 @media screen and (min-width: 2100px) {
