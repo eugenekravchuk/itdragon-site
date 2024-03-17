@@ -634,7 +634,8 @@ input[type="number"] {
     width: 50px;
     height: 50px;
     object-fit: contain;
-    margin-right: 30px;
+    margin-right: 10px;
+    opacity: 0.5;
 }
 
 .study_list_item_img_container {
@@ -905,6 +906,7 @@ input[type="number"] {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 1340px) {
@@ -1013,6 +1015,7 @@ input[type="number"] {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    opacity: 0.5;
 }
 
 .try_politics p {
@@ -1458,7 +1461,7 @@ input[type="number"] {
 
     .social_icons {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .social_icons img {
